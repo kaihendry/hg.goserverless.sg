@@ -1,0 +1,22 @@
+{
+  "name": "minimal",
+  "profile": "gosls",
+  "type": "static",
+  "static": {
+    "dir": "public"
+  },
+  "regions": [
+    "ap-southeast-1"
+  ],
+  "stages": {
+    "staging": {
+      "domain": "hg.goserverless.sg"
+    }
+  },
+  "error_pages": {
+    "variables": {
+      "support_email": "hendry@goserverless.sg",
+      "color": "#e08b8b"
+    }
+  }
+}

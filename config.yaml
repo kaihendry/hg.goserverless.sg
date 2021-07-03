@@ -1,0 +1,4 @@
+baseURL: "https://hg.goserverless.sg"
+languageCode: "en-us"
+title: "Food me"
+pluralizelisttitles: "false"

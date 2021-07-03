@@ -1,0 +1,9 @@
+<head>
+<meta charset="utf-8">
+{{ $alternate_title := replace .File.BaseFileName "_" " " | title }}
+<title>{{ .Title  | default $alternate_title }}</title>
+<link rel="stylesheet" href="https://fonts.xz.style/serve/inter.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css">
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+<meta name=viewport content="width=device-width, initial-scale=1">
+</head>
