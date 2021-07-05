@@ -9,9 +9,14 @@
   {{ .TableOfContents }}
 {{ end }}
 
-<p>
-<a href="photos/">Check out the ALL the photos</a>
-</p>
+{{ with .Resources.ByType "image" }}
+{{ range . }}
+{{ $image := .Resize "600x webp photo" }}
+<a href="{{ .RelPermalink }}">
+<img src="{{ $image.RelPermalink }}" alt ="{{ $image.Name }}">
+</a>
+{{ end }}
+{{ end }}
 
 {{.Content}}
 
