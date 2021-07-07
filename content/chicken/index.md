@@ -3,4 +3,4 @@ title: Chicken
 description: Who doesn't love Chicken?
 ---
 
-Some things about Chickens.
+I'm a leaf bundle https://gohugo.io/content-management/page-bundles/#leaf-bundles
