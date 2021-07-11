@@ -9,11 +9,26 @@
   {{ .TableOfContents }}
 {{ end }}
 
+
 {{ with .Resources.ByType "image" }}
+
+
 {{ range . }}
+
+{{ $title := "" }}
+
+{{ with .Exif }}
+
+{{- if .Tags.ImageDescription -}}
+{{/* ImageDescription can consist of blanks only - remove those */}}
+{{- $title = replaceRE "^ +$" "" .Tags.ImageDescription -}}
+{{end}}
+{{ end }}
+
 {{ $image := .Resize "600x webp photo" }}
+<!-- {{ partial "debugprint.html" $image }} -->
 <a href="{{ .RelPermalink }}">
-<img src="{{ $image.RelPermalink }}" alt ="{{ $image.Name }}">
+<img src="{{ $image.RelPermalink }}" title="{{ $title }}" alt ="{{ $image.Name }}">
 </a>
 {{ end }}
 {{ end }}
